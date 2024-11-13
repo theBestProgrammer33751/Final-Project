@@ -22,25 +22,51 @@ import javax.swing.Timer;
 
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
+	//for ay debugging code we add
+	public static boolean debugging = true;
+	
 	//Timer related variables
 	int waveTimer = 5; //each wave of enemies is 20s
 	long ellapseTime = 0;
 	Font timeFont = new Font("Courier", Font.BOLD, 70);
 	int level = 0;
-	
+
 	
 	Font myFont = new Font("Courier", Font.BOLD, 40);
 	SimpleAudioPlayer backgroundMusic = new SimpleAudioPlayer("scifi.wav", false);
 //	Music soundBang = new Music("bang.wav", false);
 //	Music soundHaha = new Music("haha.wav", false);
 	
+	//Pumpkin pumpkin = new Pumpkin();
+	//Pumpkin pumpkin2 = new Pumpkin(100, 200);
+	//Eminem eminem = new Eminem();
+	//Eminem eminem2 = new Eminem(200, 200);
+	//a row of Pumpkin Objects!
+	Pumpkin[] row1 = new Pumpkin[20];
+	Eminem[] row2 = new Eminem[20];
+	Bat bat = new Bat(600,1150);
 	//frame width/height
-	int width = 600;
-	int height = 600;	
+	int width = 1200;
+	int height = 1200;	
 	
 
 	public void paint(Graphics g) {
 		super.paintComponent(g);
+		//pumpkin.paint(g);
+		//pumpkin2.paint(g);
+		//eminem.paint(g);
+		//eminem2.paint(g);
+		bat.paint(g);
+		
+		//have the row1 objects paint on the screen!
+		//for each obj in row1
+		for(Pumpkin obj : row1) {
+			obj.paint(g);
+		}
+		
+		for(Eminem obj : row2) {
+			obj.paint(g);
+		}
 
 	}
 	
@@ -58,9 +84,20 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
  		f.addMouseListener(this);
 		f.addKeyListener(this);
 	
-		backgroundMusic.play();
-
-	
+		//backgroundMusic.play();
+		
+		/*
+		 * Setup ay 1D array here! - create the objects that go in them ;)
+		 * Traverse the array
+		 */
+		for(int i = 0; i < row1.length; i++) {
+			row1[i] = new Pumpkin(i*300, 300);
+		}
+		for(int i = 0; i < row2.length; i++) {
+			row2[i] = new Eminem(i*300, 700);
+		}
+		
+		
 		
 		//the cursor image must be outside of the src folder
 		//you will need to import a couple of classes to make it fully 
@@ -136,3 +173,35 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
