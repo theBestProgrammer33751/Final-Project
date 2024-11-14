@@ -45,18 +45,24 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Pumpkin[] row1 = new Pumpkin[20];
 	Eminem[] row2 = new Eminem[20];
 	Bat bat = new Bat(600,1150);
+	Ghost ghost = new Ghost();
+	Background2 background = new Background2();
 	//frame width/height
 	int width = 1200;
 	int height = 1200;	
 	
 
 	public void paint(Graphics g) {
+		
 		super.paintComponent(g);
+		background.paint(g);
 		//pumpkin.paint(g);
 		//pumpkin2.paint(g);
 		//eminem.paint(g);
 		//eminem2.paint(g);
-		bat.paint(g);
+		
+		ghost.paint(g);
+		
 		
 		//have the row1 objects paint on the screen!
 		//for each obj in row1
