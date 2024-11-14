@@ -15,12 +15,12 @@ public class Background2{
 	int width, height;              //collision detection (hit box)
 	int x, y;						//position of the object
 	int vx, vy;						//movement variables
-	double scaleWidth = 0.1;		//change to scale image
-	double scaleHeight = 0.1; 		//change to scale image
+	double scaleWidth = 14;		//change to scale image
+	double scaleHeight = 14; 		//change to scale image
 
 	public Background2() {
 		//load the main image (front or forward view)
-		forward 	= getImage("/imgs/"+"froger-backround-pixilart.png"); //load the image for Pumpkin
+		forward 	= getImage("/imgs/"+"bckground.png"); //load the image for Pumpkin
 		//alter these
 		width = 1150;
 		height = 1150;
