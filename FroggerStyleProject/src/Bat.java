@@ -29,8 +29,6 @@ public class Bat{
 		vx = 0;
 		vy = 3;
 		
-		width = 100;
-		height = 100;
 		
 		x = 1200/2-width/2;
 		y = 600;

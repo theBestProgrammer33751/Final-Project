@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -45,7 +46,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Pumpkin[] row1 = new Pumpkin[20];
 	Eminem[] row2 = new Eminem[20];
 	Bat bat = new Bat(600,1150);
-	Ghost ghost = new Ghost();
+	Ghost[] row3 = new Ghost[20];
+	ArrayList<Log> logsList = new ArrayList<Log>(20);
 	Background2 background = new Background2();
 	//frame width/height
 	int width = 1200;
@@ -60,8 +62,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//pumpkin2.paint(g);
 		//eminem.paint(g);
 		//eminem2.paint(g);
-		
-		ghost.paint(g);
+		for(Ghost ghosts : row3) {
+			ghosts.paint(g);
+		}
 		
 		
 		//have the row1 objects paint on the screen!
@@ -71,6 +74,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 		
 		for(Eminem obj : row2) {
+			obj.paint(g);
+		}
+		for (Log obj : logsList) {
 			obj.paint(g);
 		}
 
@@ -97,10 +103,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		 * Traverse the array
 		 */
 		for(int i = 0; i < row1.length; i++) {
-			row1[i] = new Pumpkin(i*300, 300);
+			row1[i] = new Pumpkin(i*300, 50);
 		}
 		for(int i = 0; i < row2.length; i++) {
-			row2[i] = new Eminem(i*300, 700);
+			row2[i] = new Eminem(i*300, 300);
+		}
+		for(int i = 0; i < row3.length; i++) {
+			row3[i] = new Ghost(i*300, 500);
 		}
 		
 		
