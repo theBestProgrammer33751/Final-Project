@@ -28,6 +28,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	long ellapseTime = 0;
 	Font timeFont = new Font("Courier", Font.BOLD, 70);
 	int level = 0;
+	int score = 20;
 
 	
 	Font myFont = new Font("Courier", Font.BOLD, 40);
@@ -250,8 +251,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			for(int i = 0; i < row1.length; i++) {
 					if(row1[i].getBounds().intersects(bat.getBounds())) {
 						System.out.println("Game Over!");
+						score--;
+						System.out.println(score);
 						bat.x = 600;
 						bat.y = 1175;
+						
 					}
 			
 			}
@@ -260,6 +264,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			for(int i = 0; i < row2.length; i++) {
 				if(row2[i].getBounds().intersects(bat.getBounds())) {
 					System.out.println("Game Over!");
+					score--;
+					System.out.println(score);
 					bat.x = 600;
 					bat.y = 1175;
 				}
@@ -269,6 +275,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		for(int i = 0; i < row3.length; i++) {
 			if(row3[i].getBounds().intersects(bat.getBounds())) {
 				System.out.println("Game Over!");
+				score--;
+				System.out.println(score);
 				bat.x = 600;
 				bat.y = 1175;
 			}
@@ -278,6 +286,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		for(int i = 0; i < row4.length; i++) {
 			if(row4[i].getBounds().intersects(bat.getBounds())) {
 				System.out.println("Game Over!");
+				score--;
+				System.out.println(score);
 				bat.x = 600;
 				bat.y = 1175;
 			}
