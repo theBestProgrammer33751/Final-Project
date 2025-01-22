@@ -49,7 +49,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Bluecar[] row2 = new Bluecar[20];
 	Redcar[] row3 = new Redcar[20];
 	Train[] row4 = new Train[20];
+	Train[] row5 = new Train[20];
+	Redcar[] row6 = new Redcar[20];	
 	ArrayList<Log> logsList = new ArrayList<Log>(20);
+	Log[row7] row7 = new Log[20];
 	Background2 background = new Background2();
 	//frame width/height
 	int width = 1200;
@@ -86,7 +89,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		for(Train obj : row4) {
 			obj.paint(g);
 		}
+		for(Train obj : row5) {
+			obj.paint(g);
+		}
+		for(Redcar obj : row6) {
+			obj.paint(g);
+		}
 		for(Log obj : logsList) {
+			obj.paint(g);
+		}
+		for(Log obj : row7) {
 			obj.paint(g);
 		}
 		bat.paint(g);
@@ -124,23 +136,40 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 		// These arrays are what set up the objects to slide across the screen
 		for(int i = 0; i < row1.length; i++) {
-			row1[i] = new Bluecar(i*300, 1100);
+			row1[i] = new Bluecar(i*300, 1050);
 		}
 
 		for(int i = 0; i < row2.length; i++) {
-			row2[i] = new Bluecar(i*300, 1000);
+			row2[i] = new Bluecar(i*300, 850);
 		}
  
 		for(int i = 0; i < row3.length; i++) {
-			row3[i] = new Redcar(i*300, 900);
+			row3[i] = new Redcar(i*300, 750);
 		}
 
 		for(int i = 0; i < row4.length; i++) {
-			row4[i] = new Train(i*300, 800);
+			row4[i] = new Train(i*300, 650);
+		}
+
+		for(int i = 0; i < row5.length; i++) {
+			row5[i] = new Train(i*300, 550);
+		}
+		for(int i = 0; i < row6.length; i++) {
+			row6[i] = new Redcar(i*300, 450);
 		}
 
 		for(int i = 0; i < logsList.size(); i++) {
-			logsList.add(new Log(i*300, 700));
+			logsList.add(new Log(i*300, 350));
+		}
+
+		for(int i = 0; i < row7.length; i++) {
+			row7[i] = new Log(i*300, 250);
+		}
+
+		if(bat.y >= 200) {
+			JLabel newLabel = new JLabel("You Win!");
+			Font newFont = new Font("Arial", Font.BOLD, 50);
+			newLabel.setFont(newFont);
 		}
 
 		
@@ -323,8 +352,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				bat.vx = logsList.get(i).vx;
 			}
 		}
+		for(int i = 0; i < row7.length; i++) {
+			if(row7[i].getBounds().intersects(bat.getBounds())) {
+				bat.vx = row7[i].vx;
+			}
+		}
 	}
-}
 	
 	
 	
