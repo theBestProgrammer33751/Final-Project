@@ -24,7 +24,7 @@ import javax.swing.Timer;
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
 	//for ay debugging code we add
-	public static boolean debugging = true;
+	public static boolean debugging = false;
 	
 	//Timer related variables
 	int waveTimer = 5; //each wave of enemies is 20s
@@ -45,13 +45,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//a row of Pumpkin Objects!
 	Pumpkin[] row1 = new Pumpkin[20];
 	Eminem[] row2 = new Eminem[20];
+	//redCar[] rowRow = new redCar[20];
 	Bat bat = new Bat(600,1150);
 	Ghost[] row3 = new Ghost[20];
 	ArrayList<Log> logsList = new ArrayList<Log>(20);
 	Background2 background = new Background2();
 	//frame width/height
 	int width = 1200;
-	int height = 1200;	
+	int height = 1200;
+	
 	
 
 	public void paint(Graphics g) {
@@ -66,6 +68,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			ghosts.paint(g);
 		}
 		
+		for(Log logs : logsList) {
+			logs.paint(g);
+		}
 		
 		//have the row1 objects paint on the screen!
 		//for each obj in row1
@@ -73,20 +78,25 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			obj.paint(g);
 		}
 		
+		/*for(redCar obj : rowRow) {
+			obj.paint(g);
+		}*/
+		
 		for(Eminem obj : row2) {
 			obj.paint(g);
 		}
 		for (Log obj : logsList) {
 			obj.paint(g);
 		}
-
+		bat.paint(g);
 	}
 	
-	public static void main(String[] arg) {
+	/*public static void main(String[] args) {
 		Frame f = new Frame();
-		
+	}*/
+	public static void main(String[] args) {
+		Frame f = new Frame();
 	}
-	
 	public Frame() {
 		JFrame f = new JFrame("Duck Hunt");
 		f.setSize(new Dimension(width, height));
@@ -105,13 +115,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		for(int i = 0; i < row1.length; i++) {
 			row1[i] = new Pumpkin(i*300, 50);
 		}
-		for(int i = 0; i < row2.length; i++) {
+		/*for(int i = 0; i < row2.length; i++) {
 			row2[i] = new Eminem(i*300, 300);
-		}
+		}*/
+		
 		for(int i = 0; i < row3.length; i++) {
 			row3[i] = new Ghost(i*300, 500);
 		}
-		
+		for(int i = 0; i < logsList.size(); i++) {
+			logsList.add(i, new Log(i*300, 400));
+		}
 		
 		
 		//the cursor image must be outside of the src folder

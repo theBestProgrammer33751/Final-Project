@@ -14,8 +14,8 @@ public class Bat{
 	int width, height;
 	int x, y;						//position of the object
 	int vx, vy;						//movement variables
-	double scaleWidth = 0.05;		//change to scale image
-	double scaleHeight = 0.05; 		//change to scale image
+	double scaleWidth = 0.5;		//change to scale image
+	double scaleHeight = 0.5; 		//change to scale image
 
 	public Bat() {
 		forward 	= getImage("/imgs/"+"Bat.png"); //load the image for Tree

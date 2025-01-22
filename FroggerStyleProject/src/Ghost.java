@@ -14,8 +14,8 @@ public class Ghost {
     int width, height;
     int x, y; // Position of the object
     int vx, vy; // Movement variables
-    double scaleWidth = 0.05; // Change to scale image
-    double scaleHeight = 0.05; // Change to scale image
+    double scaleWidth = 0.1; // Change to scale image
+    double scaleHeight = 0.1; // Change to scale image
 
     public Ghost() {
         forward = getImage("/imgs/" + "ghost.gif"); // Load forward image

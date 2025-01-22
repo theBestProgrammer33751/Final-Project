@@ -20,10 +20,10 @@ public class Background2{
 
 	public Background2() {
 		//load the main image (front or forward view)
-		forward 	= getImage("/imgs/"+"bckground.png"); //load the image for Pumpkin
+		forward 	= getImage("/imgs/"+"crbackground.png"); //load the image for Pumpkin
 		//alter these
-		width = 1150;
-		height = 1150;
+		width = 1200;
+		height = 1200;
 		x = 0;
 		y = 0;
 		
@@ -32,8 +32,8 @@ public class Background2{
 		vy = 0;
 		
 		//width and height for hit box
-		width = 1150;
-		height = 1150;
+		width = 1000;
+		height = 1000;
 	
 		
 		//used for replacement on the JFrame
