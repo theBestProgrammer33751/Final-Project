@@ -253,6 +253,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 						System.out.println("Game Over!");
 						score--;
 						System.out.println(score);
+						if(score <= 0) {
+							JLabel label = new JLabel("You Lost The Game!);
+							Font font = new Font("Arial", Font.BOLD, 50);
+							label.setFont(font);
+						}
 						bat.x = 600;
 						bat.y = 1175;
 						
@@ -266,6 +271,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 					System.out.println("Game Over!");
 					score--;
 					System.out.println(score);
+					// Decides and executs the sequence for the player losing the game
+					if(score <= 0) {
+						JLabel label = new JLabel("You Lost The Game!);
+						Font font = new Font("Arial", Font.BOLD, 50);
+						label.setFont(font);
+					}
 					bat.x = 600;
 					bat.y = 1175;
 				}
@@ -277,6 +288,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				System.out.println("Game Over!");
 				score--;
 				System.out.println(score);
+				// Decides and executs the sequence for the player losing the game
+				if(score <= 0) {
+						JLabel label = new JLabel("You Lost The Game!);
+						Font font = new Font("Arial", Font.BOLD, 50);
+						label.setFont(font);
+				}
 				bat.x = 600;
 				bat.y = 1175;
 			}
@@ -288,6 +305,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				System.out.println("Game Over!");
 				score--;
 				System.out.println(score);
+				// Decides and executs the sequence for the player losing the game
+				if(score <= 0) {
+						JLabel label = new JLabel("You Lost The Game!);
+						Font font = new Font("Arial", Font.BOLD, 50);
+						label.setFont(font);
+				}
 				bat.x = 600;
 				bat.y = 1175;
 			}
