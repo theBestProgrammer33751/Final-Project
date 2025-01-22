@@ -221,6 +221,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if(arg0.getKeyCode() == KeyEvent.VK_DOWN) {
 			bat.vy = 3;
 		}
+
+		if(arg0.getKeyCode() == KeyEvent.VK_RIGHT) {
+			bat.vx = 3;
+		}
+
+		if(arg0.getKeyCode() == KeyEvent.VK_LEFT) {
+			bat.vx = -3;
+		}
 		
 		
 		
